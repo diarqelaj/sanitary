@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import {Navbar} from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Impressum',
@@ -10,7 +12,8 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <main className="min-h-screen bg-stone-50 dark:bg-zinc-950 pt-32 pb-24 px-6">
-      <div className="max-w-2xl mx-auto">
+        <Navbar />
+      <div className="max-w-2xl pb-20 mx-auto">
 
         {/* Back link */}
         <Link
@@ -148,6 +151,7 @@ export default function ImpressumPage() {
 
         </div>
       </div>
+      < Footer />
     </main>
   )
 }
