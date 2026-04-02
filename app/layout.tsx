@@ -3,6 +3,7 @@ import { Fraunces, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 import Script from 'next/script' 
+import { SmoothScroll } from '@/components/SmoothScroll'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -122,6 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="font-sans bg-stone-50 dark:bg-zinc-950 text-zinc-900 dark:text-stone-100 antialiased">
         <Providers>{children}</Providers>
+         <SmoothScroll />
         <Script
           id="local-business-schema"
           type="application/ld+json"

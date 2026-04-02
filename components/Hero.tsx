@@ -145,12 +145,14 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-stone-50 dark:from-zinc-950 to-transparent z-10 w-32" />
           <div className="w-full h-full relative">
             <Image
-              src="/plumbing-oberhausen.webp"
+              src="/plumbing.jpg"
               alt="Klempner Oberhausen"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              style={{ objectPosition: '60% center' }}
+              sizes="45vw"                       
               priority
+              quality={100}
             />
           </div>
         </div>
