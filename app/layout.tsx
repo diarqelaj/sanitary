@@ -122,14 +122,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${dmSans.variable}`}
     >
       <body className="font-sans bg-stone-50 dark:bg-zinc-950 text-zinc-900 dark:text-stone-100 antialiased">
-        <Providers>{children}</Providers>
-         <SmoothScroll />
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <Providers>
+        <SmoothScroll />
+        {children}
+      </Providers>
+    </div>
+  </div>
+  <Script
+    id="local-business-schema"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+  />
+</body>
     </html>
   )
 }
