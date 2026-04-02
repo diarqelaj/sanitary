@@ -157,7 +157,7 @@ export const translations = {
       ],
       approach: {
         eyebrow: 'Unser Ansatz',
-        heading1: 'Wir lösen das Problem —',
+        heading1: 'Wir lösen das Problem',
         headingHighlight: 'beim ersten Besuch.',
         para1:
           'Viele Kunden berichten, dass andere Betriebe mehrfach kommen mussten, bis das Problem wirklich behoben war. Bei uns ist das anders: Unsere Techniker kommen mit dem richtigen Werkzeug, den passenden Ersatzteilen und dem Know-how, das es braucht.',
