@@ -1,18 +1,29 @@
 'use client'
 
-import { useEffect } from 'react'
-import Lenis from 'lenis'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
-export function SmoothScroll() {
+export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      smoothWheel: true,
-      autoRaf: true,   // ← Lenis manages its own RAF, no manual loop needed
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+    const smoother = ScrollSmoother.create({
+      wrapper: '#smooth-wrapper',
+      content: '#smooth-content',
+      smooth: 0.8,
+      effects: true,
     })
 
-    return () => lenis.destroy()
+    return () => smoother.kill()
   }, [])
 
-  return null
+  return (
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        {children}
+      </div>
+    </div>
+  )
 }

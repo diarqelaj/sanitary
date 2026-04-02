@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { X, Smartphone } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useLenis } from 'lenis/react' // 1. Import the hook
 
 interface PhoneModalProps {
   open: boolean
@@ -20,17 +21,23 @@ export function PhoneModal({
   isMobile,
 }: PhoneModalProps) {
   const { t } = useLanguage()
+  const lenis = useLenis() // 2. Initialize the Lenis instance
 
+  // 3. Control Lenis directly instead of touching body styles
   useEffect(() => {
+    if (!lenis) return
+
     if (open) {
-      document.body.style.overflow = 'hidden'
+      lenis.stop()
     } else {
-      document.body.style.overflow = ''
+      lenis.start()
     }
+
+    // Cleanup: ensure scrolling is resumed if component unmounts
     return () => {
-      document.body.style.overflow = ''
+      lenis.start()
     }
-  }, [open])
+  }, [open, lenis])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -47,15 +54,12 @@ export function PhoneModal({
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
-      {/* Backdrop */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
-      {/* Modal */}
       <div
         className="relative w-full max-w-sm bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl p-8 animate-in fade-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-full text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
@@ -64,7 +68,6 @@ export function PhoneModal({
           <X className="w-4 h-4" />
         </button>
 
-        {/* Icon */}
         <div className="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-5 mx-auto">
           <Smartphone className="w-7 h-7 text-blue-700 dark:text-blue-400" />
         </div>
@@ -79,7 +82,6 @@ export function PhoneModal({
             : t.phone_modal.hint_desktop}
         </p>
 
-        {/* Phone number */}
         <a
           href={`tel:${phoneNumber}`}
           className="flex items-center justify-center gap-3 w-full bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white py-4 px-6 rounded-2xl font-semibold text-lg transition-colors mb-3"
