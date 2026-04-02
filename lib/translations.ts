@@ -321,7 +321,7 @@ export const translations = {
       ],
       approach: {
         eyebrow: 'Our approach',
-        heading1: 'We solve the problem —',
+        heading1: 'We solve the problem',
         headingHighlight: 'on the first visit.',
         para1:
           'Many customers report that other companies had to come multiple times before the problem was actually fixed. We do things differently: our technicians arrive with the right tools, the correct spare parts and the know-how it takes.',
@@ -486,7 +486,7 @@ export const translations = {
       ],
       approach: {
         eyebrow: 'Notre approche',
-        heading1: 'Nous résolvons le problème —',
+        heading1: 'Nous résolvons le problèmeResolvemos el problema',
         headingHighlight: 'dès la première visite.',
         para1:
           'Beaucoup de clients nous disent que d\'autres entreprises ont dû intervenir plusieurs fois avant que le problème soit vraiment résolu. Chez nous, c\'est différent : nos techniciens arrivent avec les bons outils, les bonnes pièces et le savoir-faire nécessaire.',
@@ -651,7 +651,7 @@ export const translations = {
       ],
       approach: {
         eyebrow: 'Nuestro enfoque',
-        heading1: 'Resolvemos el problema —',
+        heading1: 'Resolvemos el problema',
         headingHighlight: 'en la primera visita.',
         para1:
           'Muchos clientes nos cuentan que otras empresas tuvieron que venir varias veces antes de solucionar realmente el problema. Nosotros trabajamos de otra manera: nuestros técnicos llegan con las herramientas adecuadas, los repuestos correctos y el conocimiento necesario.',
@@ -816,7 +816,7 @@ export const translations = {
       ],
       approach: {
         eyebrow: 'Qasja jonë',
-        heading1: 'Ne zgjidhim problemin —',
+        heading1: 'Ne zgjidhim problemin',
         headingHighlight: 'në vizitën e parë.',
         para1:
           'Shumë klientë raportojnë se ndërmarrje të tjera duhej të vinin disa herë para se problemi të zgjidhej me të vërtetë. Tek ne është ndryshe: teknikët tanë vijnë me mjetet e duhura, pjesët e këmbimit dhe njohuritë e nevojshme.',
